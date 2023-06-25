@@ -6,6 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   pull_request:
+    paths: ["scripts/**"] # chỉ chạy cho path
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -25,7 +26,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Testing syntax
-        run: |
-          a="testing syntax"
-          echo $a
-          
+        id: test
+        run: bash ./scripts/test.sh       
