@@ -25,7 +25,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Testing syntax
-        run: |
-          a="testing syntax"
-          echo $a
+        run: bash ./scripts/test.sh
           
